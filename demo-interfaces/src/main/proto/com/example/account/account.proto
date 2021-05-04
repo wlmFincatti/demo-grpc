@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.interfaces.account";
+
+message Account {
+  int32 id = 1;
+  string brand = 2;
+  int32 agency = 3;
+  int32 number = 4;
+  int32 digit = 5;
+}
+
+message Empty{}
+
+service AccountService{
+  rpc RetriveAccounts(Empty) returns (stream Account){};
+}
